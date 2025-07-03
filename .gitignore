@@ -1,0 +1,24 @@
+# Ignore IDE config
+.idea/
+*.iml
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Ignore vscode settings (nếu dùng VS Code)
+.vscode/
+
+# Ignore target build folders (nếu có build thử)
+target/
+build/
+
+# Ignore system files
+ehthumbs.db
+Desktop.ini
