@@ -4,8 +4,6 @@ server:
 spring:
   application:
     name: thesis-service
-  profiles:
-    active: dev
 
   datasource:
     url: jdbc:sqlserver://localhost:1433;databaseName=thesis_db;encrypt=false
