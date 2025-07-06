@@ -1,2 +1,2 @@
 # phenikaa-config-repo
-Repo chỉ chứa file cấu hình .yml của các service.
+File cấu hình .yml của các service cho phenikaa-thesis-management.
