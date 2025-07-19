@@ -18,6 +18,10 @@ spring:
     properties:
       hibernate:
         format_sql: true
+jwt:
+  secret: cGhlbmlrYWFTdXBlclNlY3JldEtleVRoYXRJc0xvbmdFbm91Z2hGb3JIUzUxMl8xMjM0NTY3ODkwIQ==
+  expiration: 86400000  # 1 ngày (tính bằng milliseconds)
+  refresh-expiration: 604800000
 
 logging:
   level:
