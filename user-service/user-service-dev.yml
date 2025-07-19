@@ -11,6 +11,9 @@ spring:
     password: ${DB_PASSWORD}
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
 
+  config:
+    import: "optional:classpath:/shared-config.yml"
+
   jpa:
     hibernate:
       ddl-auto: update   # (create, create-drop, validate, update)
