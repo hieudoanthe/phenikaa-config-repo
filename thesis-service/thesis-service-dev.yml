@@ -13,11 +13,15 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create   # (create, create-drop, validate, update)
+      ddl-auto: create
     show-sql: true
     properties:
       hibernate:
         format_sql: true
+
+  cloud:
+    discovery:
+      enabled: true   # << thêm dòng này
 
 eureka:
   client:
@@ -26,10 +30,9 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
 
-
 jwt:
-  secret: VHJlbmRvaW5heW5ndW9pZGFuZ2RldHJhbnRyb25nbmFodGFsYW5ndW9pZGFzYW5zYW5nYm90aG9pZ2lhbmRlY2hhbXNvY2JhblRob2lnaWFuY3VhYWljdW5nZGV1ZGFuZ3F1eW5odW5oYWVkZW10aG9pZ2lhbmN1YW5ndW95ZGFuaGNob2JhbmNvbmdnaW9uZ2h1dmllY2RlbWNhdGhlZ2lvaWN1YWJhbnRoYW5jaGlhc2VjdW5nYmFu
-  expiration: 86400000  # 1 ngày (tính bằng milliseconds)
+  secret: ...
+  expiration: 86400000
   refresh-expiration: 604800000
 
 logging:
