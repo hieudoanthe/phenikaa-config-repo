@@ -21,7 +21,7 @@ spring:
 
   cloud:
     discovery:
-      enabled: true   # << thêm dòng này
+      enabled: true
 
 eureka:
   client:
