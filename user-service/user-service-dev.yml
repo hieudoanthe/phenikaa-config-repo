@@ -26,6 +26,10 @@ spring:
     discovery:
       enabled: true
 
+  devtools:
+    livereload:
+      enabled: false
+
 eureka:
   client:
     service-url:
