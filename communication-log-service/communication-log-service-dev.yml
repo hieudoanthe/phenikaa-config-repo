@@ -5,6 +5,10 @@ spring:
   application:
     name: communication-log-service
 
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
   data:
     mongodb:
       uri: mongodb://localhost:27017/communication_log_db
