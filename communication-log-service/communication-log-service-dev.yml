@@ -11,7 +11,7 @@ spring:
 
   data:
     mongodb:
-      uri: mongodb://localhost:27017/communication_log_db
+      uri: mongodb://localhost:27017/phenikaa_thesis_connection
       database: communication_log_db
 
   cloud:
