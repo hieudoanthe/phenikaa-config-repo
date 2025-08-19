@@ -5,26 +5,32 @@ spring:
   application:
     name: communication-log-service
 
-  datasource:
-    url: jdbc:sqlserver://localhost:1433;databaseName=communication_db;encrypt=false
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
-    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/communication_log_db
+      database: communication_log_db
 
-  jpa:
-    hibernate:
-      ddl-auto: update   # (create, create-drop, validate, update)
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
+  cloud:
+    discovery:
+      enabled: true
+
+  devtools:
+    livereload:
+      enabled: false
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
 
 jwt:
   secret: VHJlbmRvaW5heW5ndW9pZGFuZ2RldHJhbnRyb25nbmFodGFsYW5ndW9pZGFzYW5zYW5nYm90aG9pZ2lhbmRlY2hhbXNvY2JhblRob2lnaWFuY3VhYWljdW5nZGV1ZGFuZ3F1eW5odW5oYWVkZW10aG9pZ2lhbmN1YW5ndW95ZGFuaGNob2JhbmNvbmdnaW9uZ2h1dmllY2RlbWNhdGhlZ2lvaWN1YWJhbnRoYW5jaGlhc2VjdW5nYmFu
-  expiration: 86400000  # 1 ngày (tính bằng milliseconds)
+  expiration: 86400000
   refresh-expiration: 604800000
 
 logging:
   level:
-    org.hibernate.SQL: DEBUG
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+    org.springframework.data.mongodb.repository.query: DEBUG
