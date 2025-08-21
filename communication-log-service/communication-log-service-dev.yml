@@ -14,6 +14,12 @@ spring:
       uri: mongodb://localhost:27017/phenikaa_thesis_connection
       database: communication_log_db
 
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+    # password: your_password   # (nếu Redis có password thì mở comment dòng này)
+
   cloud:
     discovery:
       enabled: true
