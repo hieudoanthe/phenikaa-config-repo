@@ -17,6 +17,9 @@ spring:
   redis:
     host: localhost
     port: 6379
+    database: 0
+    # nếu dùng password
+    # password: your_password
     timeout: 60000
 
   cloud:
