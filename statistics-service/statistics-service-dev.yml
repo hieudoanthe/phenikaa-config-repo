@@ -5,6 +5,10 @@ spring:
   application:
     name: statistics-service
 
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
   cloud:
     discovery:
       enabled: true
