@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: ${PORT:8081}
 
 spring:
   application:
@@ -7,8 +7,6 @@ spring:
 
   datasource:
     url: jdbc:sqlserver://103.157.204.54:1433;databaseName=user_db;encrypt=false
-#    username: ${DB_USERNAME}
-#    password: ${DB_PASSWORD}
     username: sa
     password: hai@123
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
@@ -31,6 +29,11 @@ spring:
       enabled: false
 
 eureka:
+  instance:
+    hostname: ${RAILWAY_PUBLIC_DOMAIN:user-service-production-495b.up.railway.app}
+    non-secure-port: ${PORT:8081}
+    prefer-ip-address: false
+    instance-id: ${spring.application.name}:${server.port}
   client:
     service-url:
       defaultZone: ${EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE:http://localhost:8761/eureka/}
