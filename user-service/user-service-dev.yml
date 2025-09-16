@@ -1,5 +1,5 @@
 server:
-  port: ${PORT:8081}
+  port: 8081
 
 spring:
   application:
@@ -36,7 +36,7 @@ jwt:
 eureka:
   instance:
     prefer-ip-address: false
-    non-secure-port: ${server.port}
+    non-secure-port: 8081
     hostname: ${RAILWAY_PUBLIC_DOMAIN:user-service-production-495b.up.railway.app}
     instance-id: ${spring.application.name}:${random.value}
   client:
