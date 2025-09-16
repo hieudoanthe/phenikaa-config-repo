@@ -6,9 +6,11 @@ spring:
     name: user-service
 
   datasource:
-    url: jdbc:sqlserver://localhost:1433;databaseName=user_db;encrypt=false
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    url: jdbc:sqlserver://103.157.204.54,1433;databaseName=user_db;encrypt=false
+#    username: ${DB_USERNAME}
+#    password: ${DB_PASSWORD}
+    username: sa
+    password: hai@123
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
 
   jpa:
