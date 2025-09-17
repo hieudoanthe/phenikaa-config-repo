@@ -31,7 +31,7 @@ spring:
 eureka:
   instance:
     prefer-ip-address: false
-    hostname: ${RAILWAY_PUBLIC_DOMAIN:user-service-production.up.railway.app} # hostname public do Railway cấp
+    hostname: ${RAILWAY_PUBLIC_DOMAIN:user-service-production-495b.up.railway.app} # hostname public do Railway cấp
     instance-id: ${spring.application.name}:${random.value}
     non-secure-port: ${PORT} # dùng port runtime từ Railway
 
