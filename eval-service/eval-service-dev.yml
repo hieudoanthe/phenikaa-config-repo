@@ -31,9 +31,15 @@ spring:
       enabled: false
 
 eureka:
+  instance:
+    prefer-ip-address: false
+    hostname: ${RAILWAY_PUBLIC_DOMAIN:eval-service-production.up.railway.app}
+    instance-id: ${spring.application.name}:${random.value}
+    non-secure-port: 8089
+
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: ${EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE:http://localhost:8761/eureka/}
     fetch-registry: true
     register-with-eureka: true
 
