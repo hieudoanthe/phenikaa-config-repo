@@ -1,5 +1,5 @@
 server:
-  port: ${PORT:8081} # Railway sẽ cấp port thực, mặc định 8081 nếu chạy local
+  port: 8081
 
 spring:
   application:
@@ -31,9 +31,9 @@ spring:
 eureka:
   instance:
     prefer-ip-address: false
-    hostname: ${RAILWAY_PUBLIC_DOMAIN:user-service-production-495b.up.railway.app} # hostname public do Railway cấp
+    hostname: ${RAILWAY_PUBLIC_DOMAIN:user-service-production-495b.up.railway.app}
     instance-id: ${spring.application.name}:${random.value}
-    non-secure-port: ${PORT} # dùng port runtime từ Railway
+    non-secure-port: 8081
 
   client:
     service-url:
