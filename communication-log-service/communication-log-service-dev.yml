@@ -1,5 +1,21 @@
 server:
   port: 8088
+  # Tăng timeout để xử lý import lớn
+  tomcat:
+    connection-timeout: 300000 # 5 phút
+    max-connections: 8192
+    accept-count: 100
+    max-threads: 200
+  servlet:
+    session:
+      timeout: 30m # 30 phút
+  # Cấu hình async request timeout
+  async:
+    request-timeout: 300000 # 5 phút
+    thread-pool:
+      core-size: 10
+      max-size: 50
+      queue-capacity: 100
 
 spring:
   application:

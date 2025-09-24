@@ -9,6 +9,13 @@ server:
   servlet:
     session:
       timeout: 30m # 30 phút
+  # Cấu hình async request timeout
+  async:
+    request-timeout: 900000 # 15 phút cho import operations
+    thread-pool:
+      core-size: 20
+      max-size: 100
+      queue-capacity: 200
 
 spring:
   application:
@@ -30,7 +37,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
@@ -38,10 +45,15 @@ spring:
         dialect: org.hibernate.dialect.SQLServer2012Dialect
         # JPA timeout configuration
         jdbc:
-          batch_size: 20
+          batch_size: 10 # Giảm batch size để tránh rollback issues
           batch_versioned_data: true
         order_inserts: true
         order_updates: true
+        # Transaction configuration
+        transaction:
+          factory_class: org.hibernate.transaction.JDBCTransactionFactory
+        connection:
+          provider_disables_autocommit: true
 
   cloud:
     discovery:
