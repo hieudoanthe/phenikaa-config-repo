@@ -6,10 +6,10 @@ spring:
     name: academic-config-service
   datasource:
     url: jdbc:sqlserver://103.157.204.54:1433;databaseName=academic_db;encrypt=false
-    #    username: ${DB_USERNAME}
-    #    password: ${DB_PASSWORD}
-    username: sa
-    password: hai@123
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+#    username: sa
+#    password: hai@123
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
 
   jpa:
